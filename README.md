@@ -54,7 +54,7 @@ Schema::create('books', function (Blueprint $table) {
 });
 ```
 
-### 1. `create_loans_table`
+### 2. `create_loans_table`
 File ini membuat tabel `loans` dengan relasi ke tabel `books`.
 
 -   **Lokasi**: `database/migrations/xxxx_xx_xx_xxxxxx_create_loans_table.php`
