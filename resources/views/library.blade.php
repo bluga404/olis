@@ -1,11 +1,9 @@
-{{-- resources/views/library.blade.php --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Peminjaman Buku - Laravel</title>
-    {{-- Direkomendasikan menggunakan Tailwind CSS atau Bootstrap untuk styling --}}
     <style>
         body { font-family: sans-serif; max-width: 1000px; margin: 40px auto; padding: 20px; background-color:#f9fafb; }
         .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 25px; }
@@ -23,13 +21,12 @@
     </style>
 </head>
 <body>
-    <h1>📚 Sistem Peminjaman Buku</h1>
+    <h1>Sistem Peminjaman Buku</h1>
 
     @if(session('success'))
         <div class="alert">{{ session('success') }}</div>
     @endif
 
-    {{-- Daftar Buku dan Fitur Search --}}
     <div class="card">
         <h2>Daftar Buku</h2>
         <form action="{{ route('books.index') }}" method="GET" style="margin-bottom: 20px; display:flex; gap:10px;">
@@ -66,7 +63,6 @@
         </table>
     </div>
 
-    {{-- Form Peminjaman --}}
     <div class="card">
         <h2>Form Peminjaman</h2>
         <form action="{{ route('books.borrow') }}" method="POST">
@@ -92,7 +88,6 @@
         </form>
     </div>
     
-    {{-- Daftar Pinjaman Aktif --}}
     <div class="card">
         <h2>Buku Sedang Dipinjam</h2>
         <table>
