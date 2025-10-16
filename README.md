@@ -52,3 +52,21 @@ Schema::create('books', function (Blueprint $table) {
     $table->enum('status', ['Available', 'Borrowed'])->default('Available');
     $table->timestamps();
 });
+```
+
+### 1. `create_loans_table`
+File ini membuat tabel `loans` dengan relasi ke tabel `books`.
+
+-   **Lokasi**: `database/migrations/xxxx_xx_xx_xxxxxx_create_loans_table.php`
+
+```php
+Schema::create('loans', function (Blueprint $table) {
+    $table->id();
+    $table->string('borrower_name');
+    $table->string('borrower_nim');
+    $table->foreignId('book_id')->constrained()->onDelete('cascade');
+    $table->timestamp('borrowed_at')->useCurrent();
+    $table->timestamp('returned_at')->nullable();
+    $table->timestamps();
+});
+```
